@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0f16">
+    <meta name="description" content="Apprends la cybersécurité en pratiquant dans des exercices locaux et sans risque.">
+    <title>CyberLab — apprends en pratiquant</title>
+    <link rel="icon" href="cyberlab-favicon-v2.svg?v=3" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css?v=20261006-9">
+    <script src="script.js?v=20261006-5" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <button class="sidebar-backdrop" type="button" aria-label="Fermer le menu" hidden></button>
+      <aside class="sidebar" id="sidebar-navigation" aria-label="Navigation principale">
+        <button class="sidebar-close" type="button" aria-label="Fermer le menu">×</button>
+        <a class="brand" href="#accueil" aria-label="CyberLab — accueil">
+          <img src="cyberlab-logo.png?v=1" alt="CyberLab" width="108" height="108">
+        </a>
+
+        <p class="nav-label">ESPACE D'APPRENTISSAGE</p>
+        <nav class="main-nav">
+          <a class="nav-link active" href="#accueil" data-nav="accueil"><span class="nav-icon">⌂</span> Vue d'ensemble</a>
+          <a class="nav-link" href="#cours" data-nav="cours"><span class="nav-icon">▤</span> Catalogue des cours <span class="nav-count">6</span></a>
+          <a class="nav-link" href="#progression" data-nav="progression"><span class="nav-icon">◷</span> Ma progression</a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="safe-badge"><span class="status-dot"></span> LABORATOIRE SÉCURISÉ</span>
+          <p>Les exercices sont simulés dans ton navigateur. Aucun système externe n'est ciblé.</p>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="avatar">CL</div>
+          <div><strong>Apprenant</strong><small>Parcours débutant</small></div>
+          <span class="footer-menu" aria-hidden="true">···</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="sidebar-navigation">☰</button>
+          <span class="breadcrumb">CyberLab <span>/</span> <strong id="current-section">Vue d'ensemble</strong></span>
+          <a class="topbar-help" href="#a-propos">À propos</a>
+        </header>
+
+        <div class="page-content">
+          <section class="view-page dashboard-page" id="dashboard-page">
+          <section class="welcome-row" id="accueil">
+            <div class="welcome-copy-block">
+              <div class="welcome-eyebrow-row">
+                <p class="eyebrow"><span class="status-dot"></span> TON ESPACE D'APPRENTISSAGE</p>
+                <span class="welcome-meta">6 modules <span>·</span> 60 questions <span>·</span> 100 % local</span>
+              </div>
+              <h1>Apprends à penser<br><span>comme un défenseur.</span></h1>
+              <p class="welcome-copy">Des cours concrets, des exemples expliqués et des quiz pour bâtir des bases solides en cybersécurité, à ton rythme.</p>
+              <a class="button button-primary welcome-action" href="#cours" data-nav="cours">Explorer les cours <span aria-hidden="true">→</span></a>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Résumé de ta progression">
+            <article class="stat-card">
+              <span class="stat-icon blue">✦</span>
+              <div><p>Points gagnés</p><strong id="points-total">0</strong></div>
+              <span class="stat-tail">XP</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon green">✓</span>
+              <div><p>Quiz réussis</p><strong id="challenges-total">0 <small>/ 6</small></strong></div>
+              <span class="stat-tail">COURS</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon slate">⌁</span>
+              <div><p>Parcours en cours</p><strong>Fondamentaux</strong></div>
+              <span class="stat-tail">01</span>
+            </article>
+          </section>
+
+          <section class="learning-layout">
+            <div class="primary-column">
+              <section class="panel journey-panel" id="progression">
+                <div class="section-heading">
+                  <div><p class="eyebrow">REPRENDS LÀ OÙ TU EN ES</p><h2>Les fondamentaux de la cybersécurité</h2></div>
+                  <span class="level-pill">DÉBUTANT</span>
+                </div>
+                <div class="journey-body">
+                  <div class="journey-icon">⌘</div>
+                  <div class="journey-description">
+                    <strong>Les fondamentaux de la cybersécurité</strong>
+                    <span id="resume-learning-summary">6 modules · 3 leçons par cours</span>
+                    <div class="progress-track" role="progressbar" aria-label="Progression du parcours" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="journey-progress"></span></div>
+                    <small id="journey-label">0 sur 6 cours terminés</small>
+                  </div>
+                  <button class="button button-primary" id="resume-learning" type="button">Commencer <span aria-hidden="true">→</span></button>
+                </div>
+              </section>
+
+            </div>
+
+            <aside class="challenge-column" id="challenges">
+              <section class="panel challenge-panel">
+                <div class="challenge-heading">
+                  <div><p class="eyebrow">À TOI DE JOUER</p><h2>Challenge du jour</h2></div>
+                  <span class="challenge-number">#01</span>
+                </div>
+                <div class="challenge-topic"><span class="topic-dot"></span><span id="challenge-topic">WEB · INJECTION SQL</span><span class="difficulty">FACILE</span></div>
+                <h3 id="challenge-title">Repérer le risque</h3>
+                <p class="challenge-prompt" id="challenge-prompt">Une application construit cette requête en insérant directement le nom fourni par l'utilisateur. Quel est le principal problème ?</p>
+                <pre class="code-sample" id="challenge-code"><code>query = "SELECT * FROM users WHERE name = '" + input + "'"</code></pre>
+                <form id="challenge-form">
+                  <fieldset class="answer-list">
+                    <legend class="sr-only">Choisis une réponse</legend>
+                    <label class="answer-option"><input type="radio" name="answer" value="a"><span class="option-key">A</span><span id="answer-a">La requête devrait toujours renvoyer plusieurs lignes.</span></label>
+                    <label class="answer-option"><input type="radio" name="answer" value="b"><span class="option-key">B</span><span id="answer-b">Une entrée inattendue peut modifier la structure de la requête.</span></label>
+                    <label class="answer-option"><input type="radio" name="answer" value="c"><span class="option-key">C</span><span id="answer-c">Le nom de table est trop court.</span></label>
+                  </fieldset>
+                  <div class="challenge-feedback" id="challenge-feedback" role="status" aria-live="polite" hidden></div>
+                  <button class="button button-primary submit-answer" type="submit">Vérifier ma réponse <span aria-hidden="true">→</span></button>
+                </form>
+                <div class="challenge-footer"><span>✦ <strong>+10 XP bonus</strong> si tu réussis</span><span id="challenge-complete">Bonus disponible</span></div>
+              </section>
+              <div class="safety-callout"><span class="safety-icon">✓</span><p><strong>Un espace pour apprendre en sécurité</strong><br>Tous les challenges sont fictifs et fonctionnent localement.</p></div>
+            </aside>
+          </section>
+
+          <section class="certificate-card" id="certificate-card" hidden aria-labelledby="certificate-title">
+            <div>
+              <p class="eyebrow">PARCOURS TERMINÉ</p>
+              <h2 id="certificate-title">Félicitations, tu maîtrises les fondamentaux !</h2>
+              <p>Ton bilan de compétences est prêt. Tu peux l'imprimer ou l'enregistrer en PDF.</p>
+            </div>
+            <button class="button button-primary" id="print-certificate" type="button">Voir mon bilan <span aria-hidden="true">↗</span></button>
+            <div class="certificate-print" id="certificate-print" aria-label="Bilan de compétences CyberLab">
+              <p class="certificate-brand">CYBERLAB · PARCOURS FONDAMENTAUX</p>
+              <h2>Attestation de réussite</h2>
+              <p class="certificate-recipient">Décernée à <strong>Apprenant</strong></p>
+              <p>Pour avoir terminé le parcours de sensibilisation à la cybersécurité.</p>
+              <ul id="certificate-skills"></ul>
+              <p class="certificate-date" id="certificate-date"></p>
+              <p class="certificate-note">Bilan pédagogique local — aucun diplôme professionnel n'est délivré.</p>
+            </div>
+          </section>
+
+          <footer class="page-footer" id="a-propos">CyberLab est un prototype éducatif. Pratique uniquement dans des environnements autorisés.</footer>
+          </section>
+
+          <section class="view-page catalog-page" id="catalog-page" hidden>
+            <div class="catalog-intro">
+              <p class="eyebrow"><span class="status-dot"></span> PARCOURS D'APPRENTISSAGE</p>
+              <h1>Catalogue des cours</h1>
+              <p>Choisis un thème, avance à ton rythme et valide tes acquis avec le quiz de chaque module.</p>
+            </div>
+            <section class="catalog-panel" aria-labelledby="catalog-heading">
+              <div class="catalog-toolbar">
+                <div class="section-heading">
+                  <div><p class="eyebrow">LES FONDAMENTAUX</p><h2 id="catalog-heading">6 modules · 3 leçons par module</h2></div>
+                </div>
+                <label class="catalog-search">
+                  <span class="sr-only">Rechercher un cours</span>
+                  <span aria-hidden="true">⌕</span>
+                  <input id="course-search" type="search" placeholder="Rechercher un cours…" autocomplete="off">
+                </label>
+              </div>
+              <div class="course-filters" role="group" aria-label="Filtrer les cours par thème">
+                <button class="filter-button is-active" type="button" data-course-filter="all" aria-pressed="true">Tous</button>
+                <button class="filter-button" type="button" data-course-filter="web" aria-pressed="false">Web</button>
+                <button class="filter-button" type="button" data-course-filter="identite" aria-pressed="false">Identité</button>
+                <button class="filter-button" type="button" data-course-filter="reseau" aria-pressed="false">Réseau</button>
+                <button class="filter-button" type="button" data-course-filter="linux" aria-pressed="false">Linux</button>
+                <button class="filter-button" type="button" data-course-filter="synthese" aria-pressed="false">Synthèse</button>
+              </div>
+              <p class="catalog-result-count" id="catalog-result-count" role="status" aria-live="polite">6 cours disponibles</p>
+              <div class="course-grid catalog-course-grid">
+                <article class="course-card" data-course-category="web">
+                  <div class="course-card-top"><span class="course-icon sql-icon">01</span><span class="course-tag">WEB <span>·</span> 12 MIN</span></div>
+                  <h3>Injection SQL</h3><p>Comprends pourquoi concaténer une entrée utilisateur à une requête peut être dangereux.</p>
+                  <a href="#cours" data-course-link="sql">Cours + quiz <span>→</span></a>
+                </article>
+                <article class="course-card" data-course-category="web">
+                  <div class="course-card-top"><span class="course-icon xss-icon">02</span><span class="course-tag">WEB <span>·</span> 14 MIN</span></div>
+                  <h3>Cross-site scripting</h3><p>Apprends à afficher du contenu utilisateur sans interpréter du code comme du HTML.</p>
+                  <a href="#cours" data-course-link="xss">Cours + quiz <span>→</span></a>
+                </article>
+                <article class="course-card" data-course-category="identite">
+                  <div class="course-card-top"><span class="course-icon auth-icon">03</span><span class="course-tag">IDENTITÉ <span>·</span> 15 MIN</span></div>
+                  <h3>Mots de passe</h3><p>Découvre les bonnes pratiques pour stocker les secrets d'authentification.</p>
+                  <a href="#cours" data-course-link="passwords">Cours + quiz <span>→</span></a>
+                </article>
+                <article class="course-card" data-course-category="reseau">
+                  <div class="course-card-top"><span class="course-icon network-icon">04</span><span class="course-tag">RÉSEAU <span>·</span> 12 MIN</span></div>
+                  <h3>Réseaux — notions</h3><p>Familiarise-toi avec les adresses IP, les ports et les services dans un lab fictif.</p>
+                  <a href="#cours" data-course-link="network">Cours + quiz <span>→</span></a>
+                </article>
+                <article class="course-card" data-course-category="linux">
+                  <div class="course-card-top"><span class="course-icon linux-icon">05</span><span class="course-tag">LINUX <span>·</span> 13 MIN</span></div>
+                  <h3>Commandes Linux</h3><p>Identifie les commandes courantes et leur rôle dans un terminal d'entraînement.</p>
+                  <a href="#cours" data-course-link="linux">Cours + quiz <span>→</span></a>
+                </article>
+                <article class="course-card" data-course-category="synthese">
+                  <div class="course-card-top"><span class="course-icon secure-icon">06</span><span class="course-tag">SYNTHÈSE <span>·</span> 10 MIN</span></div>
+                  <h3>Réflexes sécurité</h3><p>Mets en pratique les notions clés avec des scénarios de prévention.</p>
+                  <a href="#cours" data-course-link="security">Cours + quiz <span>→</span></a>
+                </article>
+              </div>
+              <p class="catalog-empty" id="catalog-empty" hidden>Aucun cours ne correspond à cette recherche. Essaie un autre mot ou un autre thème.</p>
+            </section>
+            <footer class="page-footer">Chaque cours comprend des explications, une mise en situation et un quiz final.</footer>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="course-dialog" id="course-dialog" aria-labelledby="course-dialog-title">
+      <div class="course-dialog-shell">
+        <header class="course-dialog-header">
+          <div>
+            <p class="eyebrow" id="course-dialog-kicker">MODULE 01 · WEB</p>
+            <h2 id="course-dialog-title">Cours</h2>
+          </div>
+          <button class="dialog-close" type="button" aria-label="Fermer le cours">×</button>
+        </header>
+        <div class="course-dialog-body" id="course-dialog-body"></div>
+      </div>
+    </dialog>
+  </body>
+</html>
